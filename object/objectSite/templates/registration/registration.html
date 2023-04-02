@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} Регистрация {% endblock %}
+
+{% block content %}
+<div class="registration">
+    <h2>Регистрация</h2>
+</div>
+<script>
+    $.get('{% url 'reg_ajax' %}', res => { $('.registration').append(res)});
+    $(document).on('submit', '.registration form', e => {
+        $.post('{% url "reg_ajax" %}', $('.registration form').serialize(), res => {
+            if (res == 'OK') window.location.replace("{% url 'login' %}");
+            $('.registration form').replaceWith(res);
+        });
+            e.preventDefault();
+            return false;
+    });
+</script>
+{%endblock %}

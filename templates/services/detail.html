@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ service }}</h1>
+  <ul>
+    <li><strong>Социальный объект:</strong> {{ service.stay }}</li>
+    <li><strong>Категория:</strong> {{ service.category }}</li>
+    <li><strong>Услуга:</strong> {{ service.service }}</li>
+    <li><strong>Опции:</strong>
+      {% if service.options.count > 0 %}
+        <ul>
+          {% for option in service.options.all %}
+            <li>{{ option }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        None
+      {% endif %}
+    </li>
+  </ul>
+{% endblock %}

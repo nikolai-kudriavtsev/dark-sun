@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Главная</title>
+
+   <link rel="stylesheet" href="static/css/styles.css">
+
+</head>
+<body>
+
+<div class="conteiner">
+
+    <div class="header2">
+        <div class="left_side_header2">
+            <p>г. Альметьевск, Ленина 42</p>
+            <p>+7(939) 888-888-88</p>
+         </div>
+            
+         <div class="right_side_header2">
+
+                       <div class="login_menu">
+            {% if user.is_authenticated %}
+            Здравствуйте, {{ user }}
+            <a href="{% url 'logout' %}" id="vxod">Выйти</a>
+            {% else %}
+             <a href="{% url 'login' %}" id="vxod">Войти</a>
+            <a href="{% url 'registration' %}" id="vxod">Регистрация</a>
+            {% endif %}
+        </div>
+        </div>
+
+    </div>
+
+<div class="header">
+    <div class="left_side_header">
+        <img src="static/img/logo.png" alt="logo">
+     </div>
+        
+     <div class="right_side_header">
+        <a href="#">Главная</a>
+        <a href="#">Бронирование</a>
+        <a href="{% url 'catalog' %}">Услуги</a>
+        <a href="#">Контакты</a>
+
+
+
+    </div>
+</div>
+
+
+<div>
+    <div class="text_banner">
+        <h1>Sun</h1>
+        <p> Социальные объекты</p>
+    </div>
+    <div class="banner">
+                <img src="static/img/image 18.png">
+                <img src="static/img/image 19.png">
+                <img src="static/img/image 20.png">
+                <img src="static/img/image 16.png">
+    </div>
+    <div class="banner2">
+        <img src="static/img/image 17.png">
+    </div>
+</div>
+    <div class="cmena">
+    <img src="static/img/cmena.png">
+</div>
+    <div class="nadejnost">
+    <main class="main3">
+        <article class="article3">
+            <img src="static/img/nadej1.png">
+            <h1>СОСТАВЛЯЕМ ДОГОВОР</h1>
+            <p>Фиксируем условия сотрудничества, стоимость услуг, техническое задание в договоре.</p>
+        </article>
+        <article class="article3">
+            <img src="static/img/nadej2.png">
+            <h1>ВЗАИМОДЕЙСТВИЕ</h1>
+            <p>Обратная связь по телефону, email и встречи в офисе или на нейтральной территории.</p>
+        </article>
+        <article class="article3">
+            <img src="static/img/nadej3.png">
+            <h1>ЦЕНА / КАЧЕСТВО</h1>
+            <p>Выдаем отличный результат за оптимальную оплату.</p>
+        </article>
+    </main>
+</div>
+
+
+<div class="text">
+    <h1 align-text="center">НАШИ СОЦИАЛЬНЫЕ ОБЪЕКТЫ ВКЛЮЧАЮТ В СЕБЯ </h1>
+</div>
+    <div class="soc_object">
+          <div class="soc_obj">
+              <h1>Санаторий</h1>
+            <div class="soc_text">
+                <p>-это современный лечебно-оздоровительный комплекс, где удачно<br> сочетается хорошее лечение и полноценный отдых!</p>
+            </div>
+          </div>
+          <div class="soc_obj">
+              <h1>Дом отдыха</h1>
+            <div class="soc_text">
+                <p>-это организация отдыха детей и оздоровления, в которую направляются дети в период каникул или иной период.</p>
+            </div>
+          </div>
+                  <div class="soc_obj">
+              <h1>Детский лагерь</h1>
+            <div class="">
+                <p id="soc_text">-это современный вид отдыха для большего количество людей и не только, где можно  управлять своим отдыхом сам!</p>
+            </div>
+          </div>
+
+    </div>
+
+
+
+
+<!-- <div class="text">
+    <h1 align-text="center">УСЛУГИ САНАТОРИЯ</h1>
+    <p>Помимо основных услуг, включенных в стоимость проживания, наш санаторий предоставляет перечень дополнительных платных услуг, созданных для вашего комфортного</p>
+</div>
+<div class="yslygi">
+    <div class="grid_yclygi">
+        <main class="main">
+            <article class="article">
+                <img src="static/img/img1.png">
+                <p>кедровая бочка</p>
+                <h2 id="price">2590 ₽</h2>
+                <button class="button_yclygi">Добавить в корзину</button>
+            </article>
+            <article class="article">
+                <img src="static/img/img1.png">
+                <p>кедровая бочка</p>
+                <h2 id="price">2590 ₽</h2>
+                <button class="button_yclygi">Добавить в корзину</button>
+            </article>
+            <article class="article">
+                <img src="static/img/img1.png">
+                <p>кедровая бочка</p>
+                <h2 id="price">2590 ₽</h2>
+                <button class="button_yclygi">Добавить в корзину</button>
+            </article>
+            <article class="article">
+                <img src="static/img/img1.png">
+                <p>кедровая бочка</p>
+                <h2 id="price">2590 ₽</h2>
+                <button class="button_yclygi">Добавить в корзину</button>
+            </article>
+            <article class="article">
+                <img src="static/img/img1.png">
+                <p>кедровая бочка</p>
+                <h2 id="price">2590 ₽</h2>
+                <button class="button_yclygi">Добавить в корзину</button>
+            </article>
+            <article class="article">
+                <img src="static/img/img1.png">
+                <p>кедровая бочка</p>
+                <h2 id="price">2590 ₽</h2>
+                <button class="button_yclygi">Добавить в корзину</button>
+            </article>
+            
+        </main>
+    </div>  -->
+
+
+
+
+
+<div class="forma">
+    
+    <div class="form-at">
+        <h1 align-text="center">ЗАДАЙ ВОПРОС</h1>
+        <div class="validate-input-at w-50" data-validate="Обязательное поле">
+            <input class="input-at" type="text" name="name-at" placeholder="Ваше имя" />
+            <span class="focus-input-at"></span>
+        </div>
+        <div class="validate-input-at w-50" data-validate="Обязательное поле">
+            <input class="input-at" type="text" name="email-at" placeholder="Ваш телефон или email" />
+            <span class="focus-input-at"></span>
+        </div>
+        <div class="validate-input-at" data-validate="Обязательное поле">
+            <textarea class="input-at" name="message-at" placeholder="Ваше сообщение"></textarea>
+            <span class="focus-input-at"></span>
+        </div>
+
+        <div class="result-at"><button id="submit-at" class="form-at-btn">Отправить</button></div>
+    </div>
+    
+</div>
+</div>
+<div class="text">
+    <h1 align-text="center">МЫ ГАРАНТИРУЕМ </h1>
+</div>
+<div class="yslygi">
+    <div class="grid_yclygi">
+        <main class="main2">
+            <article class="article2">
+                <img src="static/img/garant1.png">
+                <p>удобное местоположение</p>
+            </article>            
+            <article class="article2">
+                <img src="static/img/garant2.png">
+                <p>интересную программу для каждой смены</p>
+            </article> 
+            <article class="article2">
+                <img src="static/img/garant3.png">
+                <p>безопасность</p>
+            </article> 
+            <article class="article2">
+                <img src="static/img/garant4.png">
+                <p>высокий уровень сервиса</p>
+            </article> 
+            <article class="article2">
+                <img src="static/img/garant5.png">
+                <p>доступные 
+                    цены</p>
+            </article>            
+            <article class="article2">
+                <img src="static/img/garant6.png">
+                <p>комфортные
+                    номера</p>
+            </article> 
+            <article class="article2">
+                <img src="static/img/garant7.png">
+                <p>стерильность</p>
+            </article> 
+            <article class="article2">
+                <img src="static/img/garant8.png">
+                <p>бесплатное 
+                    бронирование </p>
+            </article> 
+        </main>
+    </div>
+
+</div>
+
+
+        <div class="forma">
+
+        <div class="form-at2">
+            <h1 align-text="center">ЗАПИСЬ НА КОНСУЛЬТАНЦИЮ</h1>
+            <div class="validate-input-at w-50" data-validate="Обязательное поле">
+                <input class="input-at" type="text" name="name-at" placeholder="Ваше имя" />
+                <span class="focus-input-at"></span>
+            </div>
+            <div class="validate-input-at w-50" data-validate="Обязательное поле">
+                <input class="input-at" type="text" name="email-at" placeholder="Ваш телефон или email" />
+                <span class="focus-input-at"></span>
+            </div>
+
+
+            <div class="result-at"><button id="submit-at" class="form-at-btn">Отправить</button></div>
+        </div>
+
+    </div>
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="static/img/logo.png">
+            <p>Прием посетителей только по предварительной записи.</p>
+        </div>
+       <div class="box">
+          <h3>КОНТАКТНАЯ ИНФОРМАЦИЯ</h3>
+          <p> <i class=""></i> +123-456-7890 </p>
+          <p> <i class=""></i> +7(808) 555-0111</p>
+          <p> <i class=""></i> г. Альметьевск Ленина 42</p>
+       </div>
+ 
+       <div class="box">
+          <h3>Социальные сети</h3>
+          <a href="#"> <i class=""></i> facebook </a>
+          <a href="#"> <i class=""></i> instagram </a>
+          <a href="#"> <i class=""></i> youtube </a>
+       </div>
+    </div>
+ 
+  
+ 
+ </section>
+
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Услуги</h1>
+  <ul>
+    {% for service in services %}
+      <li><a href="{% url 'service_detail' service.pk %}">{{ service }} в {{ service.stay }}</a></li>
+    {% empty %}
+      <li>No stay services found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

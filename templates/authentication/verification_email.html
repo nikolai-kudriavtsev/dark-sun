@@ -1,0 +1,7 @@
+{% autoescape off %}
+Здравствуйте, {{ user.full_name }},
+
+Спасибо за регистрацию. Пожалуйста, перейдите по ссылке для верификации вашего аккаунта:
+
+https://{{ domain }}{% url 'activate' token=token %}
+{% endautoescape %}

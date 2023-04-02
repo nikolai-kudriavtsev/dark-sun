@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="form-card">
+      <div class="form-a">
+          <h2>Авторизация</h2>
+          <form method = "post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit">Войти</button>
+          </form>
+          {{ form.errors }}
+          {{ form.non_field_errors }}
+      </div>
+      <a class="nav-link auth" href="/register">Регистрация</a>
+    </div>
+  </div>
+{% endblock %}
+
+{% comment %} % extends 'base.html' %}
+
+{% block content %}
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+{% endblock %} {% endcomment %}

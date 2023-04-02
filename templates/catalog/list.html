@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Социальные объекты</h1>
+  {% for stay in stays %}
+    <div>
+      <h2>{{ stay.title }}</h2>
+      <p>{{ stay.description }}</p>
+      <p>{{ stay.region }}, {{ stay.city }}, {{ stay.address }}</p>
+      <a href="{% url 'stay_detail' pk=stay.pk %}">Подробнее</a>
+    </div>
+  {% empty %}
+    <p>Социальные объекты не найдены.</p>
+  {% endfor %}
+{% endblock %}

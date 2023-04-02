@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <script src="{% static 'jquery-3.6.3.min.js' %}"></script>
+</head>
+<body>
+
+<div class="conteiner">
+
+    <div class="header2">
+        <div class="left_side_header2">
+            <p>г. Альметьевск, Ленина 42</p>
+              <p>+7(939) 888-888-88</p>
+         </div>
+
+         <div class="right_side_header2">
+                        <div class="login_menu">
+            {% if user.is_authenticated %}
+            Здравствуйте, {{ user }}
+            <a href="{% url 'logout' %}" id="vxod">Выйти</a>
+            {% else %}
+             <a href="{% url 'login' %}" id="vxod">Войти</a>
+            <a href="{% url 'registration' %}" id="vxod">Регистрация</a>
+            {% endif %}
+        </div>
+        </div>
+    </div>
+
+<div class="header">
+    <div class="left_side_header">
+        <img src="static/img/logo.png" alt="logo">
+     </div>
+
+     <div class="right_side_header">
+        <a href="#">Главная</a>
+        <a href="#">Бронирование</a>
+        <a href="#">Услуги</a>
+        <a href="#">Контакты</a>
+
+
+
+    </div>
+</div>
+</div>
+    <main>
+
+
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

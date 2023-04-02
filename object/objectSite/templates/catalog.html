@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Каталог{% endblock %}
+
+{% block content %}
+    <h2>Каталог</h2>
+
+    Упорядочить по:
+        <a href="{% url 'catalog' service='id' filtr=filtr %}">году производства</a>
+        <a href="{% url 'catalog' service='name' filtr=filtr %}">наименованию</a>
+        <a href="{% url 'catalog' service='price' filtr=filtr %}">цене</a>
+    <br>
+    Фильтр по:
+        <a href="{% url 'catalog' service=service filtr=0 %}">Показать все</a>
+        {% for c in categorys %}
+        <a href="{% url 'catalog' service=service filtr=c.id %}">{{ c.name }}</a>
+        {% endfor %}
+
+    <div class="outServices">
+        {% for p in services %}
+        <a href="{% url 'service_detail' p.id %}">
+            <div class="service">
+                <div class="image"><img src="{{ p.image.url }}" alt="Image"></div>
+                    <h3><label>Название: </label>{{ p.name }}</h3>
+                    <h3><label>Цена: </label>{{ p.price }}</h3>
+
+                </div>
+        </a>
+                {% if user.is_authenticated %}
+                <button class="sub_from_cart" data-id="{{ p.id }}">-</button>
+
+                <button class="add_to_cart" data-id="{{ p.id }}">+</button>
+                {% endif %}
+            {% endfor %}
+            </div>
+    </div>
+<script>
+    $(document).on('click', '.add_to_cart', e => { $obj = $(e.target);
+        $.get('/cart_add/' + $obj.data('id'), {}, res => { $obj.prev().html(res)});
+        e.preventDefault();
+        return false;
+    });
+    $(document).on('click', '.sub_from_cart', e => { $obj = $(e.target);
+        $.get('/cart_sub/' + $obj.data('id'), {}, res => { $obj.next().html(res)});
+        e.preventDefault();
+        return false;
+    });
+</script>
+{% endblock %}
