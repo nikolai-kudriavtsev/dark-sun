@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="homepage">
+        <div class="hero">
+            <h1 id="hero-title">Sun - Социальные объекты</h1>
+            <div class="featured">
+                {% for item in featured %}
+                    <div class="featured-item">
+                        <h3 class="indent">{{ item.title }}</h3>
+                        <div class="featured-image" style="background-image: url({{ item.photo.image.url }})"></div>
+                        <p>{{ item.description }}</p>
+                        <a href="{% url 'stay_detail' pk=item.stay.pk %}">Подробнее</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="objects">
+            <h3 class="indent">НАШИ СОЦИАЛЬНЫЕ ОБЪЕКТЫ ВКЛЮЧАЮТ В СЕБЯ</h3>
+
+            <div class="objects-item">
+                <p><strong>Санаторий</strong> - это современный лечебно-оздоровительный комплекс,
+                    где удачно сочетается хорошее лечение и полноценный отдых!</p>
+            </div>
+            <div class="objects-item">
+                <p><strong>Дом отдыха</strong> - это организация отдыха детей и оздоровления,
+                    в которую направляются дети в период каникул или иной период.</p>
+            </div>
+            <div class="objects-item">
+                <p><strong>Детский лагерь</strong> - это современный вид отдыха для большего количество людей и не только,
+                    где можно управлять своим отдыхом сам!</p>
+            </div>
+        </div>
+        <div class="reliability">
+            <div class="reliability-item">
+                <img src="{% static 'img/nadej1.png' %}">
+                <h3>СОСТАВЛЯЕМ ДОГОВОР</h3>
+                <p>Фиксируем условия сотрудничества, стоимость услуг, техническое задание в договоре.</p>
+            </div>
+            <div class="reliability-item">
+                <img src="{% static 'img/nadej2.png' %}">
+                <h3>ВЗАИМОДЕЙСТВИЕ</h3>
+                <p>Обратная связь по телефону, email и встречи в офисе или на нейтральной территории.</p>
+            </div>
+            <div class="reliability-item">
+                <img src="{% static 'img/nadej3.png' %}">
+                <h3>ЦЕНА / КАЧЕСТВО</h3>
+                <p>Выдаем отличный результат за оптимальную оплату.</p>
+            </div>
+        </div>
+        <div>
+            <h2 class="subtitle">МЫ ГАРАНТИРУЕМ</h2>
+            <div class="guarantee">
+                <div class="guarantee-item">
+                    <img src="{% static 'img/garant1.png' %}">
+                    <p>Удобное местоположение</p>
+                </div>
+                <div class="guarantee-item">
+                    <img src="{% static 'img/garant2.png' %}">
+                    <p>Интересную программу для каждой смены</p>
+                </div>
+                <div class="guarantee-item">
+                    <img src="{% static 'img/garant3.png' %}">
+                    <p>Безопасность</p>
+                </div>
+                <div class="guarantee-item">
+                    <img src="{% static 'img/garant4.png' %}">
+                    <p>Высокий уровень сервиса</p>
+                </div>
+                <div class="guarantee-item">
+                    <img src="{% static 'img/garant5.png' %}">
+                    <p>Доступные цены</p>
+                </div>
+                <div class="guarantee-item">
+                    <img src="{% static 'img/garant6.png' %}">
+                    <p>Комфортные номера</p>
+                </div>
+                <div class="guarantee-item">
+                    <img src="{% static 'img/garant7.png' %}">
+                    <p>Стерильность</p>
+                </div>
+                <div class="guarantee-item">
+                    <img src="{% static 'img/garant8.png' %}">
+                    <p>Бесплатное бронирование </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

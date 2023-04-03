@@ -14,7 +14,7 @@ SECRET_KEY = "django-insecure-9*5o4m3m1rld)9-yrp9er_l%m_97(fier%jgf1l#_y%uw$g9+2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['e686-80-91-23-88.eu.ngrok.io']
+ALLOWED_HOSTS = ['127.0.0.1', 'e686-80-91-23-88.eu.ngrok.io']
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -27,7 +27,7 @@ INSTALLED_APPS = [
 
     'socialbooking.authentication',
     'socialbooking.homepage',
-    # 'socialbooking.contacts',
+    'socialbooking.contacts',
     # 'socialbooking.cart',
     'socialbooking.catalog',
     'socialbooking.services',

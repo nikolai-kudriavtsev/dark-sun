@@ -1,14 +1,30 @@
+
+{% load static %}
+
 <footer>
     <hr>
-    <div class="container"
-        <p>Прием посетителей только по предварительной записи.</p>
-        <h3>КОНТАКТНАЯ ИНФОРМАЦИЯ</h3>
-        <p> <i class=""></i> +123-456-7890 </p>
-        <p> <i class=""></i> +7(808) 555-0111</p>
-        <p> <i class=""></i> г. Альметьевск Ленина 42</p>
-        <h3>Социальные сети</h3>
-        <a href="#"> <i class=""></i> facebook </a>
-        <a href="#"> <i class=""></i> instagram </a>
-        <a href="#"> <i class=""></i> youtube </a>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <a href="/">
+                        <img src="{% static 'img/logo.png' %}" alt="Logo">
+                    </a>
+                </div>
+                <p>Прием посетителей только по предварительной записи.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контактная информация</h3>
+                <p> <i class=""></i> +123-456-7890 </p>
+                <p> <i class=""></i> +7(808) 555-0111</p>
+                <p> <i class=""></i> г. Альметьевск Ленина 42</p>
+            </div>
+            <div class="footer-section">
+                <h3>Социальные сети</h3>
+                <a href="#"> <i class=""></i> facebook </a>
+                <a href="#"> <i class=""></i> instagram </a>
+                <a href="#"> <i class=""></i> youtube </a>
+            </div>
+        </div>
     </div>
 </footer>

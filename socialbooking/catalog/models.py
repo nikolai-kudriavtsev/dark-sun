@@ -30,10 +30,10 @@ class Stay(models.Model):
     coordinates = models.OneToOneField(Coordinates, on_delete=models.CASCADE)
     phone = models.CharField(max_length=9)
 
-    photos = models.ManyToManyField('Photo')
+    photos = models.ManyToManyField('Photo', blank=True)
 
     def __str__(self):
-        return f"{self.place_name}"
+        return f"{self.name}"
 
 class Suite(models.Model):
 
